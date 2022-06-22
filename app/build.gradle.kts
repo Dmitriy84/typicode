@@ -44,6 +44,7 @@ dependencies {
     testImplementation("io.rest-assured:rest-assured:$restassuredVersion")
     testImplementation("io.rest-assured:json-path:$restassuredVersion")
     testImplementation("io.rest-assured:xml-path:$restassuredVersion")
+    testImplementation("io.rest-assured:kotlin-extensions:$restassuredVersion")
 
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 

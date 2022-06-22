@@ -11,5 +11,5 @@ class CommentsApiSteps : BaseSteps() {
     override fun getRequestSpec() = requestBase("comments")
 
     @Step("GET: /comments?postId={0}")
-    fun getCommentsBy(queryParams: Map<String, Any>) = request<Array<CommentsResponse>>(parametersMap = queryParams)
+    fun getCommentsWith(queryParams: Map<String, Any>) = request<Array<CommentsResponse>>(parametersMap = queryParams)
 }
