@@ -24,8 +24,7 @@ jobs: # a collection of steps
           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - store_test_results:
           # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: ~/project/app/build/reports/tests/test
-          when: always
+          path: app/build/test-results/test
       - store_artifacts: # Upload test results for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports/tests/test
           when: always
