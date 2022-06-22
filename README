@@ -1,0 +1,7 @@
+./gradlew wrapper --gradle-version 6.9
+./gradlew :app:clean :app:test --tests "com.affinidi.SimpleTest"
+./gradlew allureReport allureServe
+
+open -a "Google Chrome" --args --allow-file-access-from-files
+
+http://192.168.0.100:58055/index.html#
