@@ -17,7 +17,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
 @EnableConfigurationProperties(ApplicationProps::class)
-@TestPropertySource("classpath:profiles/application.properties")
+@TestPropertySource("classpath:profiles/application-\${spring.profiles.active}.properties")
 @SpringBootTest(classes = [TestConfig::class])
 abstract class BaseTest {
     @Autowired

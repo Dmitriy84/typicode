@@ -17,7 +17,7 @@ jobs: # a collection of steps
       - run:
           name: Run tests
           command:
-            ./gradlew :app:test --tests "com.affinidi.AffinidiTests"
+            SPRING_PROFILES_ACTIVE=STAGING ./gradlew :app:clean :app:test --tests "com.affinidi.api.tests.AffinidiTests"
       - save_cache:
           paths:
             - ~/.gradle/wrapper

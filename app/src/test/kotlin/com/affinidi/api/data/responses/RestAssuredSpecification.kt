@@ -1,4 +1,4 @@
-package com.affinidi.api.steps.responses
+package com.affinidi.api.data.responses
 
 import io.restassured.builder.ResponseSpecBuilder
 import io.restassured.http.ContentType

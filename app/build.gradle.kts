@@ -45,6 +45,9 @@ dependencies {
     testImplementation("io.rest-assured:json-path:$restassuredVersion")
     testImplementation("io.rest-assured:xml-path:$restassuredVersion")
     testImplementation("io.rest-assured:kotlin-extensions:$restassuredVersion")
+    testImplementation("io.rest-assured:json-schema-validator:$restassuredVersion")
+
+    testImplementation("net.javacrumbs.json-unit:json-unit-assertj:2.35.0")
 
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 

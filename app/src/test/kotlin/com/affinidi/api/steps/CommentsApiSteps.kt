@@ -1,6 +1,6 @@
 package com.affinidi.api.steps
 
-import com.affinidi.api.steps.responses.CommentsResponse
+import com.affinidi.api.data.responses.comments.CommentsResponse
 import com.affinidi.framework.BaseSteps
 import io.qameta.allure.Step
 import org.springframework.stereotype.Component

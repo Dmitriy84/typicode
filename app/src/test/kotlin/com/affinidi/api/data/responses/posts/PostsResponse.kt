@@ -1,4 +1,4 @@
-package com.affinidi.api.steps.responses
+package com.affinidi.api.data.responses.posts
 
 
 data class PostsResponse(

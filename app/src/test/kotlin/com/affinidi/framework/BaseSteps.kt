@@ -1,6 +1,6 @@
 package com.affinidi.framework
 
-import com.affinidi.api.steps.responses.RestAssuredSpecification
+import com.affinidi.api.data.responses.RestAssuredSpecification
 import com.affinidi.framework.config.ApplicationProps
 import com.affinidi.framework.config.BaseRestAssuredConfig
 import com.fasterxml.jackson.core.type.TypeReference
@@ -17,7 +17,7 @@ import java.util.UUID
 
 
 //@EnableConfigurationProperties(ApplicationProps::class)
-//@TestPropertySource("classpath:profiles/application.properties")
+//@TestPropertySource("classpath:profiles/application-STAGING.properties")
 @Component
 abstract class BaseSteps {
     abstract fun getRequestSpec(): RequestSpecification
@@ -28,9 +28,13 @@ abstract class BaseSteps {
         path: String = "",
         method: Method = Method.GET,
         specification: ResponseSpecification = RestAssuredSpecification.OK_RESPONSE_SPEC.value,
-        parametersMap: Map<String, Any> = emptyMap()
+        parametersMap: Map<String, Any> = emptyMap(),
+        headers: Map<String, Any> = emptyMap(),
+        body: Any? = null,
     ): Pair<T, Response> {
         val response = getRequestSpec()
+            .headers(headers)
+            .body(body ?: "")
             .queryParams(parametersMap)
             .request(method, path)
         return response
@@ -41,7 +45,7 @@ abstract class BaseSteps {
     }
 
     @Autowired
-    protected lateinit var applicationProps: ApplicationProps
+    lateinit var applicationProps: ApplicationProps
 
     @Step("first step")
     fun test() {

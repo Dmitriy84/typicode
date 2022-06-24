@@ -1,6 +1,6 @@
-package com.affinidi.api.steps.responses
+package com.affinidi.api.data.responses.users
 
-data class UsersResponse(
+data class GetUsersResponse(
     val address: Address,
     val company: Company,
     val email: String,
