@@ -1,6 +1,6 @@
 ##### How to run
 ```
-SPRING_PROFILES_ACTIVE=STAGING ./gradlew :app:clean :app:test --tests "com.affinidi.api.tests.AffinidiTests"
+SPRING_PROFILES_ACTIVE=STAGING ./gradlew :app:clean :app:test
 ```
 
 ##### Generate report
