@@ -21,7 +21,7 @@ import org.hamcrest.Matchers.lessThan
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
-import kotlin.time.Duration.Companion.minutes
+import kotlin.time.Duration.Companion.seconds
 
 
 @Epic("Affinidi test task")
@@ -55,7 +55,7 @@ class AffinidiTests : BaseTest() {
         } When {
             photosApiSteps.getPhotos().second
         } Then {
-            time(lessThan(10.minutes.inWholeMilliseconds))
+            time(lessThan(10.seconds.inWholeMilliseconds))
         }
     }
 
