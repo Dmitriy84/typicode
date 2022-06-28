@@ -8,7 +8,7 @@ SPRING_PROFILES_ACTIVE=STAGING ./gradlew :app:clean :app:test
 ./gradlew :app:allureReport :app:allureServe
 ```
 
-##### CI
+##### CI results
 ```
 https://app.circleci.com/pipelines/github/Dmitriy84/typicode?branch=main&filter=all
 ```
