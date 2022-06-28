@@ -16,8 +16,6 @@ import java.util.Base64
 import java.util.UUID
 
 
-//@EnableConfigurationProperties(ApplicationProps::class)
-//@TestPropertySource("classpath:profiles/application-STAGING.properties")
 @Component
 abstract class BaseSteps {
     abstract fun getRequestSpec(): RequestSpecification
@@ -46,29 +44,3 @@ abstract class BaseSteps {
 
     @Autowired
     lateinit var applicationProps: ApplicationProps
-
-    @Step("first step")
-    fun test() {
-        println("baseURI=${applicationProps.baseURI}")
-    }
-
-//    protected fun requestBase(path: String) = BaseRestAssuredConfig.authSpec(apiToken1, baseURI).basePath(path)!!
-
-    fun getUserID(token: String = "") =
-        UUID.fromString(
-            (getFromToken(
-                "https://api.skedulo.com/ven",
-                token
-            ) as LinkedHashMap<*, *>)["user_id"] as String?
-        )!!
-
-    fun getTenantID() = getFromToken("https://api.skedulo.com/organization_id") as String
-
-    fun getInternalAdminUserID() = getUserID()
-
-    private fun getFromToken(key: String, token: String = "") =
-        ObjectMapper().readValue(
-            Base64.getDecoder().decode(token.split(".").toTypedArray()[1]),
-            object : TypeReference<Map<String?, Any?>?>() {}
-        )?.get(key)
-}
