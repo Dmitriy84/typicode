@@ -44,3 +44,4 @@ abstract class BaseSteps {
 
     @Autowired
     lateinit var applicationProps: ApplicationProps
+}
